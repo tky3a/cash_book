@@ -7,8 +7,18 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  Button,
+  View,
 } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
+
+/**
+ * カレンダー
+ * @param DateTimePickerModal
+ * @param moment
+ */
+import DateTimePickerModal from "react-native-modal-datetime-picker";
+import moment from "moment";
 
 const onPress = () => {};
 
@@ -20,7 +30,7 @@ const categoryPlaceholder = {
 
 export const HomeScreen = () => {
   const [index, setSelectedIndex] = useState(0);
-  console.log("??????", index);
+  console.log("セグメントIndex", index);
   let items;
   if (index == 0) {
     items = [
@@ -39,6 +49,26 @@ export const HomeScreen = () => {
       { label: "その他", value: "その他" },
     ];
   }
+
+  // ---- カレンダー ---- //
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
+  };
+
+  //  キャンセルした時に実行される
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false); //
+  };
+
+  // 日付または時刻を選択した時に呼び出される
+  const handleConfirm = (date) => {
+    console.warn("A date has been picked: ", date);
+    console.log("選択した日付", moment(date).format("YYYY/MM/DD"));
+    hideDatePicker();
+  };
+  // ---- カレンダー ---- //
+
   return (
     <SafeAreaView style={styles.container}>
       <SegmentedControl
@@ -74,13 +104,19 @@ export const HomeScreen = () => {
       />
       {/* 日付 */}
       {/* これで実装: https://qiita.com/mildsummer/items/aba2a4434bb99697b8fa#%E6%97%A5%E4%BB%98%E9%81%B8%E6%8A%9E%E3%82%92%E4%BD%9C%E6%88%90 */}
-      <TextInput
-        style={styles.input}
-        onChangeText={(text) => {}}
-        value={""}
-        multiline={true}
-        placeholder="日付"
-      />
+      <View style={styles.input}>
+        <Text onPress={showDatePicker}>日付</Text>
+        <DateTimePickerModal
+          isVisible={isDatePickerVisible}
+          mode="date"
+          onConfirm={handleConfirm}
+          onCancel={hideDatePicker}
+          cancelTextIOS="キャンセル"
+          confirmTextIOS="OK"
+          headerTextIOS={"日付を選択"}
+          locale="ja"
+        />
+      </View>
       <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
         <Text style={styles.buttonText}>保存</Text>
       </TouchableOpacity>

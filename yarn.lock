@@ -1500,6 +1500,23 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
 
+"@react-native-community/datetimepicker@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/datetimepicker/-/datetimepicker-2.4.0.tgz#6b3cf050f507f9b70d31d5a572e1153bb5bd50c9"
+  integrity sha512-ZXPwNAQt4T66PTL20l2nSEbtsn6vtsvFqdYWBfx8aaNKBoCPDygR6SsYzWcIoexKH5wmX0zctSzIsryl+Gtngg==
+  dependencies:
+    invariant "^2.2.4"
+
+"@react-native-community/picker@^1.6.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/picker/-/picker-1.8.0.tgz#32425321af1e29e3da882fbd627a71ea142c75e4"
+  integrity sha512-aS506wjynNzKDZjynlDasbc665GKGHdhrCob9KdOprPFlE+zMnoR3k0Ce0OkIuGHcY/GMVvQqTc+LYVm2UOmbg==
+
+"@react-native-community/segmented-control@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/segmented-control/-/segmented-control-2.1.2.tgz#13dd38a2f1972f7c9061f74b9e8e9fd35cbfa6a8"
+  integrity sha512-2UEr+Dqk+VHcMaZPOcKSo0GqFZG91DjngeACy+DOB2gRvph/FGKjABV6HlQJqdhQeQs/4NgoycCjAH+Z8ilIVg==
+
 "@react-navigation/bottom-tabs@^5.8.0":
   version "5.8.0"
   resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.8.0.tgz#d7386809bceeead0adcaacf61b6563be9cefd5cb"
@@ -2937,7 +2954,7 @@ expo-status-bar@^1.0.0:
   resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.0.2.tgz#2441a77c56be31597898337b0d086981f2adefd8"
   integrity sha512-5313u744GcLzCadxIPXyTkYw77++UXv1dXCuhYDxDbtsEf93iMra7WSvzyE8a7mRQLIIPRuGnBOdrL/V1C7EOQ==
 
-expo@^38.0.0:
+expo@^38.0.10:
   version "38.0.10"
   resolved "https://registry.yarnpkg.com/expo/-/expo-38.0.10.tgz#c3938f22ee56985289ca7532f94263c6f7fc0989"
   integrity sha512-tgloRuZs3uyMEPDRo4SV6ZmCQSG7HcCvT0Ryf0tp89pnAyAS4knEX3ZfzGcK0X4njQfZ02uvBJ4dCEMxWb9h0Q==
@@ -4072,6 +4089,11 @@ lodash.clone@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.clone/-/lodash.clone-4.5.0.tgz#195870450f5a13192478df4bc3d23d2dea1907b6"
   integrity sha1-GVhwRQ9aExkkeN9Lw9I9LeoZB7Y=
 
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+  integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
+
 lodash.throttle@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
@@ -4489,6 +4511,11 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
   integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
   dependencies:
     minimist "^1.2.5"
+
+moment@^2.28.0:
+  version "2.28.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.28.0.tgz#cdfe73ce01327cee6537b0fafac2e0f21a237d75"
+  integrity sha512-Z5KOjYmnHyd/ukynmFd/WwyXHd7L4J9vTI/nn5Ap9AVUgaAE15VvQ9MOGmJJygEUklupqIrFnor/tjTwRU+tQw==
 
 ms@2.0.0:
   version "2.0.0"
@@ -5172,6 +5199,21 @@ react-native-iphone-x-helper@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
   integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
+
+react-native-modal-datetime-picker@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-modal-datetime-picker/-/react-native-modal-datetime-picker-9.0.0.tgz#43da27d777337d5ad5045b1538d3d5b5b197a968"
+  integrity sha512-8856SLrlVokhBaNWQmkwKbrwjfZP0AfRFIaA4CGXtXq83Hd+mvdmGbwKSfrAGQspAsqFMi7CYxSf4s0n16xCeg==
+  dependencies:
+    prop-types "^15.7.2"
+
+react-native-picker-select@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-picker-select/-/react-native-picker-select-8.0.0.tgz#75d9e1fd982ea3cdbb9f47f327f33ce8007a5ef3"
+  integrity sha512-iX9Me6vzyQUcWiOwXXZoYBNzvMo5LJRMq3bu41aZd9I32XKd30x/apk0p8+2xtJKPa/eAdkQUQrULSCmxxuA/g==
+  dependencies:
+    "@react-native-community/picker" "^1.6.0"
+    lodash.isequal "^4.5.0"
 
 react-native-reanimated@^1.13.0:
   version "1.13.0"
