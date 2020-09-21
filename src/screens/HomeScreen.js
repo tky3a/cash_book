@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import React, { Component } from "react";
+import React, { Component, useState, useContext } from "react";
+import SegmentedControl from "@react-native-community/segmented-control";
 import {
   StyleSheet,
   SafeAreaView,
@@ -18,8 +19,35 @@ const categoryPlaceholder = {
 };
 
 export const HomeScreen = () => {
+  const [index, setSelectedIndex] = useState(0);
+  console.log("??????", index);
+  let items;
+  if (index == 0) {
+    items = [
+      { label: "食費", value: "食費" },
+      { label: "外食費", value: "外食費" },
+      { label: "日用品", value: "日用品" },
+      { label: "交通費", value: "交通費" },
+      { label: "衣服", value: "衣服" },
+      { label: "交際費", value: "交際費" },
+      { label: "趣味", value: "趣味" },
+      { label: "その他", value: "その他" },
+    ];
+  } else if (index == 1) {
+    items = [
+      { label: "給料", value: "給料" },
+      { label: "その他", value: "その他" },
+    ];
+  }
   return (
     <SafeAreaView style={styles.container}>
+      <SegmentedControl
+        values={["支出", "収入"]}
+        index={index}
+        onChange={(event) => {
+          setSelectedIndex(event.nativeEvent.selectedSegmentIndex);
+        }}
+      />
       <Text>Home Screen</Text>
       <TextInput
         style={styles.input}
@@ -34,16 +62,7 @@ export const HomeScreen = () => {
         style={styles.select}
         onValueChange={(value) => console.log(value)}
         placeholder={categoryPlaceholder}
-        items={[
-          { label: "食費", value: "食費" },
-          { label: "外食費", value: "外食費" },
-          { label: "日用品", value: "日用品" },
-          { label: "交通費", value: "交通費" },
-          { label: "衣服", value: "衣服" },
-          { label: "交際費", value: "交際費" },
-          { label: "趣味", value: "趣味" },
-          { label: "その他", value: "その他" },
-        ]}
+        items={items}
       />
       {/* メモ */}
       <TextInput
